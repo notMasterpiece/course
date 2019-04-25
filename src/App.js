@@ -35,7 +35,11 @@ class App extends Component {
   }
 
   onChange = (e) => {
-    this.setState({filter: e.target.value.toLocaleLowerCase()})
+    if (e.target.value.trim()) {
+      const target = e.target.value.trim().toLocaleLowerCase();
+      this.setState({filter: target})
+    }
+
   };
 
 

@@ -8,6 +8,8 @@ class PostList extends Component {
 
         const {posts} = this.props;
 
+        if (!posts.length) return <h2>Posts not found</h2>
+
         return (
             <div>
                 {posts.map(p => (
