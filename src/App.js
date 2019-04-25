@@ -35,11 +35,8 @@ class App extends Component {
   }
 
   onChange = (e) => {
-    if (e.target.value.trim()) {
-      const target = e.target.value.trim().toLocaleLowerCase();
-      this.setState({filter: target})
-    }
-
+    const target = e.target.value.trim().toLocaleLowerCase();
+    this.setState({filter: target})
   };
 
 
@@ -63,8 +60,9 @@ class App extends Component {
               posts={filterArray}
           />
           {
-            posts.length > filterArray.length && filter.length <= 0 &&
-              <MoreButton onClick={this.showMore} />
+            posts.length > filterArray.length && filterArray.length
+                ? <MoreButton onClick={this.showMore} />
+                : null
           }
 
         </div>
