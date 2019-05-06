@@ -7,7 +7,6 @@ import PostList from './components/Post/PostList';
 import Spinner from "./components/Spinner/Spinner";
 import MoreButton from './components/Post/MoreButton';
 
-
 const defaultCount = 10;
 
 class App extends Component {
@@ -55,6 +54,7 @@ class App extends Component {
     return (
         <div className='app'>
           <h1>Course</h1>
+
           <Filter onChange={this.onChange}/>
           <PostList
               posts={filterArray}
