@@ -2,26 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from "styled-components";
 
-const TodoItem = ({todo, deleteTodo, setCompleted}) => {
-    return (
-        <TodoLi key={todo.id}>
-            <TodoLabel htmlFor={todo.id}>
-                <input
-                    id={todo.id}
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={() => setCompleted(todo.id)}
-                />
-                {todo.value}
-            </TodoLabel>
-            <TodoClose onClick={() => deleteTodo(todo.id)}/>
-        </TodoLi>
-    );
-};
+const TodoItem = ({todo, toggleTodo, deleteTodo}) => (
+    <TodoLi key={todo.id}>
+        <TodoLabel htmlFor={todo.id}>
+            <input
+                id={todo.id}
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => toggleTodo(todo.id)}
+            />
+            {todo.value}
+        </TodoLabel>
+        <TodoClose onClick={() => deleteTodo(todo.id)}/>
+    </TodoLi>
+);
 
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
-    setCompleted: PropTypes.func.isRequired,
+    toggleTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired,
 };
 
@@ -50,6 +48,7 @@ const TodoClose = styled.div`
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
     &:after {
       content: 'x';
     }

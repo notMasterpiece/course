@@ -80,6 +80,7 @@ class Todo extends Component {
     render() {
 
         const {todo, value} = this.state;
+        console.log(this.props);
 
         return (
             <TodoWrap>
@@ -182,5 +183,4 @@ const TodoLength = styled.li`
 `;
 
 Todo.propTypes = {};
-
 export default Todo;
