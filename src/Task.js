@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import App from './App';
-import Task2 from './components/HOC/Task2';
-import Todo from './components/Task4/Todo';
-import TodoList from './components/Task5/TodoList';
+import Task2 from './scenes/HOC/Task2';
+import Todo from './scenes/Task4/Todo';
+import TodoList from './scenes/Task5/TodoList';
+import ReduxTodo from './scenes/Task8/App';
 
 
 const Task = () => {
@@ -15,6 +16,7 @@ const Task = () => {
                 <Route path='/task3' component={Task2} />
                 <Route path='/task4' component={Todo} />
                 <Route path='/task5/' component={TodoList} />
+                <Route path='/task8/' component={ReduxTodo} />
                 <Redirect from='/' to='/task2/'/>
             </Switch>
         </Router>

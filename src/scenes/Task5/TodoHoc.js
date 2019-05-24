@@ -18,13 +18,6 @@ const todos = [
 ];
 
 const enhance = compose(
-    // withStateHandlers(
-    //     {value: '', todos},
-    //     {
-    //         onChange: () => e => ({value: e.target.value}),
-    //         deleteTodo: ({todos}) => id => ({todos: todos.filter(todo => todo.id !== id)}),
-    //     }
-    // )
     withState('value', 'setValue', ''),
     withState('todos', 'setTodos', todos),
     withHandlers({
